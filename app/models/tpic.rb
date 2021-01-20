@@ -1,0 +1,2 @@
+class Tpic < ApplicationRecord
+end
