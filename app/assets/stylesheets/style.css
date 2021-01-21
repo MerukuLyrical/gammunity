@@ -855,7 +855,7 @@ div.contents.row h2 strong {
 }
 
 div.contents.row .new_user {
-  font-family: "游ゴシック", "YuGothic";
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 div.contents.row div.content_post {

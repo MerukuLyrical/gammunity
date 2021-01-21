@@ -8,7 +8,10 @@ class TpicsController < ApplicationController
   end
 
   def create
-    Tpic.create(tpic_params)
+    @tpic = Tpic.create(tpic_params)
+    if @tpic.save
+      redirect_to root_path
+    end
   end
 
   def new
@@ -17,7 +20,9 @@ class TpicsController < ApplicationController
 
   def destroy
     tpic = Tpic.find(params[:id])
-    tpic.destroy
+    if tpic.destroy
+      redirect_to root_path
+    end
   end
 
   def show
@@ -26,7 +31,11 @@ class TpicsController < ApplicationController
 
   def update
     tpic = Tpic.find(params[:id])
-    tpic.update(tweet_params)
+    if tpic.update(tpic_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def edit

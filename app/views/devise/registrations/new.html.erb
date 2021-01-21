@@ -5,8 +5,8 @@
       <%= devise_error_messages! %>
 
      <div class="field">
-        <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
-        <%= f.text_field :nickname, autofocus: true %>
+        <%= f.label :name %> <em>(6 characters maximum)</em><br />
+        <%= f.text_field :name, autofocus: true %>
       </div>
 
       <div class="field">
@@ -26,6 +26,20 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
+
+      <div class="field">
+        <%# <div class="weight-bold-text">
+          配送料の負担
+          <span class="indispensable">必須</span>
+        </div> %>
+        <%= f.collection_select(:like_id, Like.all, :id, :name, {}, {class:"select-box", id:"like_games"}) %>
+        </div>
+
+      <div class="field">
+        <%= f.label :profile %><br />
+        <%= f.text_field :profile %>
+      </div>
+  
 
       <div class="actions">
         <%= f.submit "Sign up" %>
