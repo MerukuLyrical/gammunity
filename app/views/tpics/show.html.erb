@@ -20,9 +20,12 @@
     </span>
   </div>
    <div class="container">
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.id == @tpic.user.id %>
+    <h1><span>トピックを編集する</span></h1>
+    <span>タイトル</span>
       <%= form_with(model: [@tpic], local: true) do |form| %>
       <%= form.text_field :title, placeholder: "Title" %>
+      <span>本文</span>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
         <%= form.submit "SEND" %>
       <% end %>

@@ -5,39 +5,33 @@
       <%= devise_error_messages! %>
 
      <div class="field">
-        <%= f.label :name %> <em>(6 characters maximum)</em><br />
+        <%= f.label :name, "ユーザーネーム" %> <em></em><br />
         <%= f.text_field :name, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :email, "メールアドレス" %><br />
         <%= f.email_field :email %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
+        <%= f.label :password, "パスワード"%>
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation, "パスワード(確認用)" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
       <div class="field">
-        <%# <div class="weight-bold-text">
-          配送料の負担
-          <span class="indispensable">必須</span>
-        </div> %>
+      好きなゲームジャンル(いずれか1つ選択)
         <%= f.collection_select(:like_id, Like.all, :id, :name, {}, {class:"select-box", id:"like_games"}) %>
         </div>
 
       <div class="field">
-        <%= f.label :profile %><br />
-        <%= f.text_field :profile %>
+        <%= f.label :profile, "プロフィール"%><br />
+        <%= f.text_area :profile %>
       </div>
   
 
