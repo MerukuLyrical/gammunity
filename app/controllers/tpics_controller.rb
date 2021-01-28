@@ -26,6 +26,8 @@ class TpicsController < ApplicationController
 
   def show
     @tpic = Tpic.find(params[:id])
+    @comment = Comment.new
+    @comments = @tpic.comments.includes(:user)
   end
 
   def update
