@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :tpics
+  has_many :comments
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :like
-  
+
   # has_many :comments #commentsテーブルとのアソシエーション
   validates :name, presence: true, length: { maximum: 8 }
   validates :profile, presence: true
