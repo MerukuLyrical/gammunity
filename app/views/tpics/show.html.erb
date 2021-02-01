@@ -51,7 +51,8 @@
       <% @comments.each do |comment| %>
         <p>
           <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.text %>
+          <%= comment.text %> :
+          <%= comment.created_at.to_s(:datetime_jp) %>
         </p>
       <% end %>
     </div>
