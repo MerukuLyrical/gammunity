@@ -18,6 +18,7 @@
       <% tpic.tags.each do |tag| %>
       タグ:<%=tag.tag_name%>
       <%end%>
+      <br>作成日時:<%= tpic.created_at.to_s(:datetime_jp) %></br>
       <span class="name">
       <a href="/users/<%= tpic.user.id %>">
       <span>作成者</span><%= tpic.user.name %>

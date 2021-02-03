@@ -3,7 +3,7 @@ class TpicsController < ApplicationController
 
 
   def index
-    @tpics = Tpic.all
+    @tpics = Tpic.all.order(created_at: :desc)
   end
 
   def create
