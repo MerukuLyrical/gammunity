@@ -1,4 +1,7 @@
 class Tag < ApplicationRecord
-  has_many :tpic_tag_relations
+
+  validates :tag_name, uniqueness: true
+
+  has_many :tpic_tag_relations, dependent: :destroy
   has_many :tpics, through: :tpic_tag_relations
 end

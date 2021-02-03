@@ -7,14 +7,17 @@ class TpicsController < ApplicationController
   end
 
   def create
-    @tpic = Tpic.create(tpic_params)
-    if @tpic.save
-      redirect_to root_path
+    @tpic = TpicsTag.new(tpic_params)
+    if @tpic.valid?
+      @tpic.save
+      return redirect_to root_path
+    else
+      render "new"
     end
   end
 
   def new
-    @tpic = Tpic.new
+    @tpic = TpicsTag.new
   end
 
   def destroy
@@ -46,7 +49,7 @@ class TpicsController < ApplicationController
 
   private
   def tpic_params
-    params.require(:tpic).permit(:text, :title).merge(user_id: current_user.id)
+    params.require(:tpics_tag).permit(:text, :title, :tag_name).merge(user_id: current_user.id)
   end
 
   def move_to_index

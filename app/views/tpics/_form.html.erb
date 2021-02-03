@@ -1,5 +1,6 @@
-    <%= form_with(model: tpic, local: true) do |form| %>
-      <%= form.text_field :title, placeholder: "Title" %>
-      <%= form.text_area :text, placeholder: "text", rows: "10" %>
+    <%= form_with(model: @tpic, url: tpics_path, local: true) do |form| %>
+      <%= form.text_field :title, placeholder: "タイトル" %>
+      <%= form.text_field :tag_name, placeholder: "タグ" %>
+      <%= form.text_area :text, placeholder: "本文", rows: "10" %>
       <%= form.submit "SEND" %>
     <% end %>

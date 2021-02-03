@@ -17,7 +17,10 @@
       <p><%= tpic.title %></p>
       <span class="name">
       <a href="/users/<%= tpic.user.id %>">
-        <span>作成者</span><%= tpic.user.name %>
+      <span>作成者</span><%= tpic.user.name %>
         </a>
       </span>
     </div>
+                <% tpic.tags.each do |tag| %>
+              #<%=tag.name%>
+            <%end%>
