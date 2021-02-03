@@ -26,17 +26,6 @@
   <h1>トピック内容</h1>
    <%= @tpic.text%>
    </div>
-   <div class="container2">
-    <% if user_signed_in? && current_user.id == @tpic.user.id %>
-    <h1><span>トピックを編集する</span></h1>
-    <span>タイトル</span>
-      <%= form_with(model: [@tpic], local: true) do |form| %>
-      <%= form.text_field :title, placeholder: "Title" %>
-      <span>本文</span>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
-      <% end %>
-    <% end %>
 
       <div class="container">
     <% if user_signed_in? %>

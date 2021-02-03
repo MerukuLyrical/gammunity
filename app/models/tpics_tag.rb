@@ -19,4 +19,6 @@ class TpicsTag
     TpicTagRelation.create(tpic_id: @tpic.id, tag_id: @tag.id)
   end
 
+  
+
 end

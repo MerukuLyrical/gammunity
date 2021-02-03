@@ -44,6 +44,7 @@ class TpicsController < ApplicationController
 
   def edit
     @tpic = Tpic.find(params[:id])
+    @tag_name = @tpic.tag_name
   end
 
 
