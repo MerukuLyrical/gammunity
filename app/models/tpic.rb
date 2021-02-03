@@ -3,7 +3,7 @@ class Tpic < ApplicationRecord
   validates :title, presence: true
 
   has_many :tpic_tag_relations, dependent: :destroy
+  has_many :tags, through: :tpic_tag_relations
   has_many :comments
-  has_many :tags, through: :tweet_tag_relations
   belongs_to :user
 end

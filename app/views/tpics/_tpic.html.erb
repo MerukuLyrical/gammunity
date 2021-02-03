@@ -15,12 +15,13 @@
       </ul>
       </div>
       <p><%= tpic.title %></p>
+      <% tpic.tags.each do |tag| %>
+      タグ:<%=tag.tag_name%>
+      <%end%>
       <span class="name">
       <a href="/users/<%= tpic.user.id %>">
       <span>作成者</span><%= tpic.user.name %>
         </a>
       </span>
     </div>
-                <% tpic.tags.each do |tag| %>
-              #<%=tag.name%>
-            <%end%>
+

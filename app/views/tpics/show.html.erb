@@ -18,6 +18,9 @@
        <span>投稿者</span><%= @tpic.user.name %>
       </a>
     </span>
+      <% @tpic.tags.each do |tag| %>
+      タグ:<%= tag.tag_name%>
+      <%end%>
   </div>
   <div class="container">
   <h1>トピック内容</h1>
